@@ -1,0 +1,34 @@
+<div class="sidebar-inner c-overflow">    
+
+    <ul class="main-menu">
+        
+        <li data-ui-sref-active="active">
+            <a ui-sref="adminhome"><i class="zmdi zmdi-home"></i> HOME</a>
+        </li>
+        <li data-ng-class="{ 'active toggled': mactrl.$state.includes('preTest') }"  class="sub-menu">
+            <a href="" toggle-submenu><i class="zmdi zmdi-view-compact"></i> PRETEST</a>
+           		<ul>
+                	<!-- <li><a data-ui-sref-active="active" ui-sref="preTest.addPreTest">Add Pretest</a></li> -->
+                    <li><a data-ui-sref-active="active" ui-sref="preTest.editPreTest">Add/Edit Pretest</a></li>
+                    
+               	</ul>
+        </li>
+        <li data-ng-class="{ 'active toggled': mactrl.$state.includes('addPreTestQuestions') }" class="sub-menu">
+            <a href="" toggle-submenu><i class="zmdi zmdi-file-plus zmdi-hc-fw"></i> ADD PRETEST QUESTIONS</a>
+            	<ul>
+                	<li><a data-ui-sref-active="active" ui-sref="addPreTestQuestions.addSpeakingQuestions">Speaking Questions</a></li>
+               </ul>
+        </li>
+        <li data-ng-class="{ 'active toggled': mactrl.$state.includes('employee') }" class="sub-menu">
+            <a href="" toggle-submenu><i class="zmdi zmdi-account zmdi-hc-fw"></i> EMPLOYEE</a>
+            	<ul>
+                	<li><a data-ui-sref-active="active" ui-sref="employee.assignPreTest">Assign PreTest</a></li>
+                    <li><a data-ui-sref-active="active" ui-sref="employee.addEmployee">Add Employee</a></li>
+                    <li><a data-ui-sref-active="active" ui-sref="employee.showEmployee">Show Employee</a></li>
+               	</ul>
+        </li>
+        
+        
+        
+    </ul>
+</div>

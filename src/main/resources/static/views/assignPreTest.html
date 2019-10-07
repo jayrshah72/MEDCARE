@@ -1,0 +1,68 @@
+<data ui-view>
+<<section id="content">
+      	 	<div class="container">
+         		<div class="block-header">	
+         		</div>
+	         		<div class="card">
+	         			<div class="card-header ch-alt text-center">
+						<h2>Assign PreTest</h2>
+					</div>
+					<div class="card-body card-padding">
+						<form role="form" action="" method="post" class="assignPreTest-form" id="assignPreTest" ng-submit="assignPreTest($event)">
+
+     					
+     					<div class="row">
+							<!-- <div class="col-sm-6">
+								<select chosen data-placeholder="Select Employee..." class="w-100"  >
+     								<option ng-repeat="employee in employeeList" value="{{employee.id}}">{{employee.name}}</option>
+                    			</select>
+							</div> -->
+							
+							<div class="col-sm-6">
+			                   <div class="form-group">
+			                        <div class="fg-line">
+			                            <div class="select">
+			                                <select class="form-control" ng-change="callPreTest()" ng-model="assign.employeeId">
+			                                    <option value="">Select Employee</option>
+			                                    <option ng-repeat="employee in employeeList" value="{{employee.id}}" >{{employee.name}}</option>		                                    
+			                                </select>
+			                            </div>
+			                        </div>
+			                    </div>
+                			</div>
+                			
+                			<div class="col-sm-6" ng-hide="!assign.employeeId">
+			                   <div class="form-group">
+			                        <div class="fg-line">
+			                            <div class="select">
+			                                <select class="form-control" ng-model="assign.preTestId">
+			                                    <option value="">Select PreTest</option>
+			                                    <option ng-repeat="preTest in notEmployeePreTestList" value="{{preTest.id}}">{{preTest.name}}</option>		                                    
+			                                </select>
+			                            </div>
+			                        </div>
+			                    </div>
+                			</div>
+							
+							<!-- <div class="col-sm-6">
+								<select chosen data-placeholder="Select a Pretest Type..." class="w-100" ng-model="pretest.type" >
+     								<option value="Speaking PreTest">Speaking PreTest</option>
+                        			<option value="Reading PreTest">Reading PreTest</option>
+                        			<option value="Listening PreTest">Listening PreTest</option>
+                        			<option value="Writing PreTest">Writing PreTest</option>
+                    			</select>
+								
+							</div> -->
+						</div>
+						<div class="row text-center" style="margin-top:20px">
+                			<div class="col-lg-12">
+                				<button type="submit" class="btn btn-primary">Submit</button>
+                			</div>
+            			</div>
+            			</form>
+						</div>
+					</div>
+				</div>
+		</section>
+	
+</data>

@@ -1,0 +1,18 @@
+.heading_style {
+font-size: 13pt;
+padding: 5px;
+color: #000000;
+}
+
+span {
+margin-left: 10px;
+}
+
+.input_text {
+padding-left: 10px !important;
+}
+
+.textarea_text {
+padding-left: 10px !important;
+padding-top: 10px !important;
+}

@@ -1,0 +1,43 @@
+<data ui-view>
+<header id="header" data-current-skin={{mactrl.currentSkin}} data-ng-include="'template/employeeHeader.html'" data-ng-controller="headerCtrl as hctrl"></header>
+
+   <section id="main" data-layout="layout-1">
+   		<aside id="sidebar" data-ng-include="'views/adminmenu.html'" data-ng-class="{ 'toggled': mactrl.sidebarToggle.left === true }"></aside>
+   		<section id="content">
+      	 	<div class="container">
+         		<div class="block-header">
+         			<button ui-sref="adminhome" class="btn btn-default btn-icon-text waves-effect"><i class="zmdi zmdi-arrow-back"></i> Back</button>	
+         		</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="card">
+					        <div class="card-body table-responsive">
+					            <table class="table">
+					                <thead>
+					                    <tr>
+					                        <th>ID</th>
+					                        <th>Employee Name</th>
+					                        <th>PreTest Name</th>
+					                        <th>Score</th>
+					                        <th>Details</th>
+					                    </tr>
+					                </thead>
+					                <tbody>
+					                    <tr ng-repeat= "employee in preTestEmployees">
+					                        <td>{{employee.employeeId}}</td>
+					                        <td>{{employee.employeeName}}</td>
+					                        <td>{{employee.name}}</td>
+					                        <td><p >{{employee.employeeScore!=0? employee.employeeScore : '-'}}</p></td>
+					                        <td><a ui-sref="preTestEmployeeDetail({'ids':{'employeeId':employee.employeeId,'preTestId':preTest.id,'rubricId':preTest.rubricId},'names' : {'employeeName':employee.employeeName,'preTestName':employee.name}})">Click Here</a></td>
+					                    </tr>
+					                   
+					                </tbody>
+					            </table>
+					        </div>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</section>
+</data>

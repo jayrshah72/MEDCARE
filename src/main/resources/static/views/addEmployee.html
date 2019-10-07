@@ -1,0 +1,62 @@
+<data ui-view>
+<<section id="content">
+      	 	<div class="container">
+         		<div class="block-header">	
+         		</div>
+	         		<div class="card">
+	         			<div class="card-header ch-alt text-center">
+						<h2>Add Employee</h2>
+						</div>
+					<div class="card-body card-padding">
+						<form role="form" action="" method="post" class="addEmployee-form" id="addEmployee" ng-submit="addEmployee($event)">
+						<div class="row">
+							<div class="col-sm-6">
+								<div class="form-group fg-float">
+                                	<div class="fg-line">
+                                    	<input type="text" class="input-lg form-control fg-input" ng-model="employee.name">
+                                    	<label class="fg-label">Enter Employee Name</label>
+                                	</div>
+                            	</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="form-group fg-float">
+	                                <div class="fg-line">
+	                                    <input type="email" class="input-lg form-control fg-input" ng-model="employee.email">
+	                                    <label class="fg-label">Enter Employee Email</label>
+	                                </div>
+	                            </div>
+							</div>
+						</div>
+						
+						<div class="row">
+            				<div class="col-lg-6">
+     							<div class="form-group fg-float m-b-30">
+                					<div class="fg-line">
+                    					<input type="password" class="input-lg form-control fg-input" ng-model="employee.password">
+	                                    <label class="fg-label">Enter Employee Password</label>
+                					</div>
+            					</div>
+            				</div>
+            				<div class="col-lg-6">
+     							<div class="form-group fg-float m-b-30">
+                					<div class="fg-line">
+                    					<input type="number" class="input-lg form-control fg-input" ng-model="employee.contact">
+	                                    <label class="fg-label">Enter Contact Number</label>
+                					</div>
+            					</div>
+            				</div>
+     					</div>
+     					
+     					
+						<div class="row text-center" style="margin-top:20px">
+                			<div class="col-lg-12">
+                				<button type="submit" class="btn btn-primary">Submit</button>
+                			</div>
+            			</div>
+            			</form>
+						</div>
+					</div>
+				</div>
+		</section>
+	
+</data>

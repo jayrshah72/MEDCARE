@@ -1,0 +1,170 @@
+<data ui-view="">
+    <header id="header" class="clearfix" data-current-skin="blue">
+        <ul class="header-inner">
+            <li class="logo hidden-xs">
+                <a>Medcare Invoice</a>
+            </li>
+            <li class="pull-right">
+                <button class="btn btn-danger waves-effect" data-ng-click="logout()">LOGOUT</button>
+            </li>
+        </ul>
+    </header>
+
+    <section id="content">
+
+        <div class="container invoice">
+
+            <div class="block-header">
+                <h3>Invoice</h3>
+            </div>
+
+            <div class="card">
+                <div class="card-header ch-alt text-center">
+                    <img class="i-logo" src="img/medcare_logo.jpg" alt="">
+                </div>
+
+                <div class="card-body card-padding">
+                    <div class="row m-b-25">
+                        <div class="col-xs-6">
+                            <div class="text-right">
+                                <p class="c-gray">Invoice from</p>
+
+                                <h4>Doctor Name</h4>
+
+                                <span class="text-muted">
+                                                <address>
+                                                    Baroda
+                                                    Gujarat<br>
+                                                    India.
+                                                </address>
+
+                                                Mobile No.<br/>
+                                                Email
+                                            </span>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-6">
+                            <div class="i-to">
+                                <p class="c-gray">Invoice to</p>
+
+                                <h4>Patient Name</h4>
+
+                                <span class="text-muted">
+                                                <address>
+                                                    Baroda
+                                                    Gujarat<br>
+                                                    India.
+                                                </address>
+
+                                                Mobile No.<br/>
+                                                Email
+                                            </span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <div class="row m-t-25 p-0 m-b-25" style="margin-left: 210px;">
+                        <div class="col-xs-3">
+                            <div class="bgm-amber brd-2 p-15">
+                                <div class="c-white m-b-5">Invoice No</div>
+                                <h2 class="m-0 c-white f-300">1</h2>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-3">
+                            <div class="bgm-blue brd-2 p-15">
+                                <div class="c-white m-b-5">Date</div>
+                                <h2 class="m-0 c-white f-300">06/02/2018</h2>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-3">
+                            <div class="bgm-red brd-2 p-15">
+                                <div class="c-white m-b-5">Total Amount</div>
+                                <h2 class="m-0 c-white f-300">Rs.</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <table class="table i-table m-t-25 m-b-25">
+                        <thead class="text-uppercase">
+                        <th class="c-gray">ITEM DESCRIPTION</th>
+                        <th class="c-gray">UNIT PRICE</th>
+                        <th class="c-gray">QUANTITY</th>
+                        <th class="highlight">TOTAL AMOUNT</th>
+                        </thead>
+
+                        <tbody>
+                        <thead>
+                        <tr>
+                            <td width="50%">
+                                <h5 class="text-uppercase f-400"></h5>
+                                <p class="text-muted"></p>
+                            </td>
+
+                            <td></td>
+                            <td></td>
+                            <td class="highlight"></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <h5 class="text-uppercase f-400"></h5>
+                                <p class="text-muted"></p>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td class="highlight"></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <h5 class="text-uppercase f-400"></h5>
+                                <p class="text-muted"></p>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td class="highlight"></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <h5 class="text-uppercase f-400"></h5>
+                                <p class="text-muted"></p>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td class="highlight"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"></td>
+                            <td class="highlight"></td>
+                        </tr>
+                        </thead>
+                        </tbody>
+                    </table>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-float bgm-red m-btn" data-action="print"><i class="zmdi zmdi-print"></i></button>
+
+    </section>
+
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="preloader pls-blue">
+            <svg class="pl-circular" viewBox="25 25 50 50">
+                <circle class="plc-path" cx="50" cy="50" r="20" />
+            </svg>
+
+            <p>Please wait...</p>
+        </div>
+    </div>
+</data>

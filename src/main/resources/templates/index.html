@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+    <html data-ng-app="myapp" data-ng-controller="materialadminCtrl as mactrl">
+
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Medcare</title>
+
+        <!--Favicon Replacement-->
+        <link rel="icon" type="image/png" href="resources/ico/favicon.png"/>
+
+        <!-- Vendor CSS -->
+        <link href="resources/vendors/bower_components/animate.css/animate.min.css" rel="stylesheet"/>
+        <link href="resources/vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet"/>
+        <link href="resources/vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.css" rel="stylesheet"/>
+        <link href="resources/vendors/bower_components/angular-loading-bar/src/loading-bar.css" rel="stylesheet"/>
+        <link href="resources/vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+		<link rel="stylesheet" href="resources/libs/angular/toaster/toaster.min.css"/>
+		<link rel="stylesheet" href="resources/css/register-form/font-awesome.min.css"/>
+		<link rel="stylesheet" href="resources/vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css"/>
+		<link rel="stylesheet" href="resources/vendors/bower_components/fullcalendar/dist/fullcalendar.min.css"/>
+		<!-- CSS -->
+        <link href="resources/css/app.min.1.css" rel="stylesheet" id="app-level"/>
+        <link href="resources/css/app.min.2.css" rel="stylesheet"/>
+        <link href="resources/css/demo.css" rel="stylesheet"/>
+
+		<link href="resources/vendors/bower_components/chosen/chosen.min.css" rel="stylesheet"/>
+        <link href="resources/vendors/bower_components/bootstrap-select/dist/css/bootstrap-select.css" rel="stylesheet" />
+        <link href="resources/vendors/bower_components/nouislider/jquery.nouislider.css" rel="stylesheet" />
+        <link href="resources/vendors/farbtastic/farbtastic.css" rel="stylesheet" />
+
+    </head>
+
+    <body data-ng-class="{ 'sw-toggled': mactrl.layoutType === '1'}" class="sw-toggled">
+
+        <data ui-view=""></data>
+
+		<!-- Core -->
+        <script src="resources/vendors/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="resources/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<toaster-container toaster-options="{'time-out': 1000, 'close-button':true, 'animation-class': 'toast-top-center'}"></toaster-container>
+
+        <!-- Angular -->
+        <script src="resources/vendors/bower_components/angular/angular.js"></script>
+        <script src="resources/vendors/bower_components/angular-animate/angular-animate.min.js"></script>
+        <script src="resources/vendors/bower_components/angular-resource/angular-resource.min.js"></script>
+        
+        <!-- Angular Modules -->
+        <script src="resources/vendors/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="resources/vendors/bower_components/angular-loading-bar/src/loading-bar.js"></script>
+        <script src="resources/vendors/bower_components/oclazyload/dist/ocLazyLoad.min.js"></script>
+        <script src="resources/vendors/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+        <script src="resources/libs/angular/1.4.3/angular-cookies.min.js"></script>
+        <script src="resources/vendors/bower_components/angular/angular-password.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.js"></script>
+		
+        <!-- Common Vendors -->
+        <script src="resources/vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="resources/vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.min.js"></script>
+        <script src="resources/vendors/bower_components/Waves/dist/waves.min.js"></script>
+        <script src="resources/vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
+        <script src="resources/vendors/bower_components/ng-table/dist/ng-table.min.js"></script>
+
+        <!-- Using below vendors in order to avoid misloading on resolve -->
+        <script src="resources/vendors/bower_components/moment/min/moment.min.js"></script>
+        <script src="resources/vendors/bower_components/flot/jquery.flot.js"></script>
+        <script src="resources/vendors/bower_components/flot.curvedlines/curvedLines.js"></script>
+        <script src="resources/vendors/bower_components/flot/jquery.flot.resize.js"></script>
+        <script src="resources/vendors/sparklines/jquery.sparkline.min.js"></script>
+        <script src="resources/vendors/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
+        <script src="resources/vendors/bower_components/flot-orderBars/js/jquery.flot.orderBars.js"></script>
+        <script src="resources/vendors/bower_components/flot/jquery.flot.pie.js"></script>
+        <script src="resources/vendors/bower_components/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+        <script src="resources/vendors/bower_components/angular-nouislider/src/nouislider.min.js"></script>
+        <script src="resources/vendors/bower_components/angular-audio/angular-audio-recorder.js"></script>
+        <script src="resources/vendors/bower_components/ngDraggable/angular-drag-and-drop-lists.js"></script>
+        <script src="resources/vendors/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
+        <script src="resources/vendors/bower_components/simpleWeather/jquery.simpleWeather.min.js"></script>
+        <script src="resources/vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+        <script src="resources/vendors/input-mask/input-mask.min.js"></script>
+        <script src="resources/vendors/bower_components/nouislider/jquery.nouislider.min.js"></script>
+
+        <script src="resources/vendors/fileinput/fileinput.min.js"></script>
+        <script src="resources/vendors/bower_components/chosen/chosen.jquery.js"></script>
+        <script src="resources/vendors/bower_components/angular-chosen-localytics/chosen.js"></script>
+        <script src="resources/vendors/bower_components/angular-farbtastic/angular-farbtastic.js"></script>
+        <!-- Angular Toaster Libraries -->
+		<script src="resources/libs/angular/toaster/toaster.min.js"></script>
+		<script src="resources/js/angular.audio.js"></script>
+        
+        <!-- App level -->
+        <script src="resources/js/angularjs/app.js"></script>
+        <script src="resources/js/controllers/main.js"></script>
+        <!--<script src="resources/js/services.js"></script>-->
+        <!--<script src="resources/js/controllers/ui-bootstrap.js"></script>-->
+        <!--<script src="resources/js/controllers/table.js"></script>-->
+        <!---->
+        <!-- controllers -->
+        <script src="resources/js/angularjs/controllers/controllers.js"></script>
+        <script src="resources/js/angularjs/controllers/login-controller.js"></script>
+        <script src="resources/js/angularjs/controllers/doctordashController.js"></script>
+        <script src="resources/js/angularjs/controllers/popUp-Controller.js"></script>
+        <script src="resources/js/angularjs/controllers/prescriptionController.js"></script>
+        <script src="resources/js/angularjs/controllers/patient-controller.js"></script>
+        <script src="resources/js/angularjs/controllers/modal-controller.js"></script>
+        <script src="resources/js/angularjs/controllers/receptionist-controller.js"></script>
+        <script src="resources/js/angularjs/controllers/admin-controller.js"></script>
+        <script src="resources/js/angularjs/controllers/medicine-controller.js"></script>
+        <script src="resources/js/angularjs/controllers/patient-admin-controller.js"></script>
+        <script src="resources/js/angularjs/controllers/staff-admin-controller.js"></script>
+        <script src="resources/js/angularjs/controllers/medicine-admin-controller.js"></script>
+
+        <!-- Services -->
+        <script src="resources/js/angularjs/services/services.js"></script>
+        <script src="resources/js/angularjs/services/util-service.js"></script>
+        <script src="resources/js/angularjs/services/login-service.js"></script>
+        <script src="resources/js/angularjs/services/doctordash-service.js"></script>
+        <script src="resources/js/angularjs/services/popUp-Service.js"></script>
+        <script src="resources/js/angularjs/services/prescription-service.js"></script>
+        <script src="resources/js/angularjs/services/patient-service.js"></script>
+        <script src="resources/js/angularjs/services/modal-service.js"></script>
+        <script src="resources/js/angularjs/services/receptionist-service.js"></script>
+        <script src="resources/js/angularjs/services/admin-service.js"></script>
+        <script src="resources/js/angularjs/services/medicine-service.js"></script>
+        <script src="resources/js/angularjs/services/staff-admin-service.js"></script>
+        <script src="resources/js/angularjs/services/patient-admin-service.js"></script>
+        <script src="resources/js/angularjs/services/medicine-admin-service.js"></script>
+        <script src="resources/vendors/bower_components/typeahead.js/dist/typeahead.bundle.min.js"></script>
+        <script src="resources/vendors/bower_components/Waves/wavesurfer.min.js"></script>
+        <script src="resources/vendors/bower_components/bootstrap-select/dist/js/bootstrap-select.js"></script>
+
+        <!-- Template Modules -->
+        <!--<script src="resources/js/modules/template.js"></script>-->
+        <!--<script src="resources/js/flot-charts/line-chart.js"></script>-->
+        <!--<script src="resources/js/charts.js"></script>-->
+        <!--<script src="resources/js/flot-charts/curved-line-chart.js"></script>-->
+        <!--<script src="resources/js/modules/ui.js"></script>-->
+        <!--<script src="resources/js/modules/charts/flot.js"></script>-->
+        <!--<script src="resources/js/modules/charts/other-charts.js"></script>-->
+        <!--<script src="resources/js/modules/form.js"></script>-->
+        <!--<script src="resources/js/modules/media.js"></script>-->
+        <!--<script src="resources/js/modules/components.js"></script>-->
+        <!--<script src="resources/js/modules/calendar.js"></script>-->
+        <!--<script src="resources/js/modules/demo.js"></script>-->
+        <script src="resources/js/functions.js"></script>
+
+    </body>
+</html>
+

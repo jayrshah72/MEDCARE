@@ -1,0 +1,48 @@
+<data data-ui-view="">
+    <header id="header" class="clearfix" data-current-skin="blue">
+        <ul class="header-inner">
+
+            <li class="logo hidden-xs">
+                <a>Staff Administration</a>
+            </li>
+            <li class="pull-right">
+                <button class="btn btn-danger waves-effect" data-ng-click="logout()">LOGOUT</button>
+            </li>
+        </ul>
+    </header>
+
+    <section id="main" data-layout="layout-1">
+
+        <section id="content">
+
+            <div class="container">
+                <div class="block-header" style="margin-left: 455px;">
+                    <h2>Hospital Staff - Admin</h2>
+                </div>
+
+                <div>
+                    <div class="table-responsive">
+                        <table id="data-table-basic" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th data-column-id="id" data-type="numeric">#</th>
+                                    <th data-column-id="mobile" data-type="numeric">Mobile Number</th>
+                                    <th data-column-id="sender">Name</th>
+                                    <th data-column-id="received" data-order="desc">Type</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-ng-repeat="member in staff">
+                                    <td>{{$index + 1}}</td>
+                                    <td>{{member.phno}}</td>
+                                    <td>{{member.username}}</td>
+                                    <td>{{member.type}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+</data>

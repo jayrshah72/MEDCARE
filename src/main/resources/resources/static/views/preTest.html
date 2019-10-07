@@ -1,0 +1,8 @@
+<header id="header" data-current-skin={{mactrl.currentSkin}} data-ng-include="'template/employeeHeader.html'" data-ng-controller="headerCtrl as hctrl"></header>
+
+   <section id="main" data-layout="layout-1">
+   		<aside id="sidebar" data-ng-include="'views/adminmenu.html'" data-ng-class="{ 'toggled': mactrl.sidebarToggle.left === true }"></aside>
+  
+  <data ui-view></data>
+  
+  </section>

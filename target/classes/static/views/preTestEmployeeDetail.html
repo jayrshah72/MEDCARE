@@ -1,0 +1,119 @@
+<style>
+.p_number {
+	font-size: 20pt;
+    font-weight: bold;
+    text-align: center;
+    line-height: 10;
+}
+.modal-lg
+{
+width:95%;
+}
+
+.image_block {
+	width: 300px;
+	height:300px;
+}
+
+.center_name {
+	display : inline-block;
+	font-size: 15pt;
+}
+
+</style>
+<data ui-view>
+<header id="header" data-current-skin={{mactrl.currentSkin}} data-ng-include="'template/employeeHeader.html'" data-ng-controller="headerCtrl as hctrl"></header>
+
+   <section id="main" data-layout="layout-1">
+   		<aside id="sidebar" data-ng-include="'views/adminmenu.html'" data-ng-class="{ 'toggled': mactrl.sidebarToggle.left === true }"></aside>
+   		<section id="content">
+      	 	<div class="container">
+         		<div class="block-header text-center">
+         			<div class="pull-left">
+         				<button ui-sref="adminhome.preTestEmployeeList" class="btn btn-default btn-icon-text waves-effect"><i class="zmdi zmdi-arrow-back"></i> Back</button>
+         			</div>
+         			<p class="center_name">{{names.employeeName}} - {{names.preTestName}}</p/>
+         			<div class="pull-right">
+         				<button class="btn bgm-green btn-icon-text waves-effect" ng-click="open('lg')"><i class="zmdi zmdi-assignment-o "></i> Grade</button>
+         			</div>
+         			
+         		</div>
+				<div class="row">
+					<div class="col-lg-6" ng-repeat = "employee in employeeResult">
+						<div class="card">
+						<div class="card-header ch-alt m-b-20" style="height: 125px;">
+                    <h2>Speaking Question {{$index+1}}<small>{{employee.description}}</small></h2>
+                    <!-- <button class="btn bgm-green btn-float waves-effect" ng-click="open('lg')"><i class="zmdi zmdi-assignment-o"></i></button> -->
+                </div>
+						    <div class="card-body card-padding">
+						    	<p align="center">
+									<img class="image_block" src={{employee.image}} />	
+								</p>
+						    	<div class="text-center">
+						    		<audio controls>
+									  	<source src={{employee.audio}} type="audio/mp3">
+										Your browser does not support the audio element.
+									</audio>
+								</div>
+						    </div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+	</section>
+	      <script type="text/ng-template" id="myModalContent.html">
+                <div class="modal-header">
+                    <h2 class="modal-title">Rubric Grading</h2>
+                    <h4 style="display:inline-block;">{{rubricContent.name}}</h4>
+					<div class="pull-right">
+					<button class="btn bgm-blue waves-effect" ng-click="ok()" >Submit</button>
+                    <button class="btn waves-effect" ng-click="cancel()">Cancel</button>
+                    </div>
+					<div style="text-align: right;margin-right: 3%;" ng-show="employeeRecord.employeeScore!=0">
+						<h5>{{employeeRecord.employeeScore}}% Given</h5>
+					</div>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Level</th>
+                        <th>Type</th>
+                   		<th>Percentage</th>
+                        <th>Criteria</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="p in rubricContent.rp" ng-click="radioSelected($index,p.percentage)" ng-class="{ 'bgm-green' : employeeRecord.employeeScore!=0 && employeeRecord.employeeScore == p.percentage}">
+
+                        <td ng-class="{ 'c-white' : employeeRecord.employeeScore!=0 && employeeRecord.employeeScore == p.percentage}">
+							{{$index+1}}
+						</td>
+                        <td><label class="radio radio-inline m-r-20" ng-class="{ 'c-white' : employeeRecord.employeeScore!=0 && employeeRecord.employeeScore == p.percentage}">
+                            <input type="radio" id="grades" name="grades" value="{{p.percentage}}" ng-model="grade" ng-checked="selectedIndex == $index" ">
+                			<i class="input-helper"></i>{{p.proficiencyLevel}}
+							</label>
+						</td>
+                        <td ng-class="{ 'c-white' : employeeRecord.employeeScore!=0 && employeeRecord.employeeScore == p.percentage}">{{p.proficiencyName}}</td>
+                        <td ng-class="{ 'c-white' : employeeRecord.employeeScore!=0 && employeeRecord.employeeScore == p.percentage}">{{p.percentage}}%</td>
+                        <td ng-class="{ 'c-white' : employeeRecord.employeeScore!=0 && employeeRecord.employeeScore == p.percentage}">{{p.proficiencyCriteria}}</td>
+                    </tr>
+
+                </tbody>
+            </table>
+                </div>
+                <div class="modal-footer">
+                   
+                </div>
+            </script>
+            
+            <!--  ng-if="employeeRecord.employeeScore==0" Condition to Hide Radio Button Given to i Element -->
+            
+            <!-- ng-disabled="(employeeRecord.employeeScore!=0 )" Condition to Disable Button -->
+            
+            <!-- {{employeeRecord.employeeScore!=0 ? employeeRecord.employeeScore+'% Given'  : 'Submit'}} Condition Given to Button Name For Showing Submit or Score -->
+				
+</data>

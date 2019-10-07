@@ -1,0 +1,103 @@
+<data ui-view="">
+    <header id="header" class="clearfix" data-current-skin="blue">
+        <ul class="header-inner">
+            <li class="logo hidden-xs">
+                <a>Meedicine Administration</a>
+            </li>
+            <li class="pull-right">
+                <button class="btn btn-danger waves-effect" data-ng-click="logout()">LOGOUT</button>
+            </li>
+        </ul>
+    </header>
+
+    <section id="main" data-layout="layout-1">
+
+        <div class="container">
+            <div class="block-header" style="margin-left: 455px;">
+                <h2>Medicine - Admin</h2>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2>Medicines Data</h2>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Medicine Name</th>
+                                <th>Contents</th>
+                                <th>Used For</th>
+                                <th>Price</th>
+                                <th>Tablets</th>
+                                <th>Remove Medicine</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-ng-repeat="medicine in medicines">
+                                <td>{{$index + 1}}</td>
+                                <td>{{medicine.name}}</td>
+                                <td>{{medicine.contents}}</td>
+                                <td>{{medicine.usedfor}}</td>
+                                <td>{{medicine.price}}</td>
+                                <td>{{medicine.tablets}}</td>
+                                <td style="padding-bottom: 5px; margin-top: -5px; white-space: nowrap">
+                                    <button class="btn bgm-cyan command-delete waves-effect waves-cicle" style="margin-left: 40px;" data-ng-click="open(medicine.id, $index)"><i class="zmdi zmdi-delete"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class="card-header">
+                    <h2>Add New Medicines</h2>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Medicine Name</th>
+                                <th>Contents</th>
+                                <th>Used For</th>
+                                <th>Price</th>
+                                <th>Tablets</th>
+                                <th>Add New Medicine</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <form data-ng-submit="insertMed($event)">
+                                <tr>
+                                   <td></td>
+                                    <td>
+                                        <input name="medicinename" data-ng-model="medicine.name" type="text" class="typeahead form-control" style="border-color: transparent; box-shadow: none; opacity: 1; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(255, 255, 255);" placeholder="Medicine Name">
+                                    </td>
+                                    <td>
+                                        <input name="medicinecontent" data-ng-model="medicine.contents" type="text" class="typeahead form-control" style="border-color: transparent; box-shadow: none; opacity: 1; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(255, 255, 255);" placeholder="Medicine Contents">
+                                    </td>
+                                    <td>
+                                        <input name="medicineuse" data-ng-model="medicine.usedfor" type="text" class="typeahead form-control" style="border-color: transparent; box-shadow: none; opacity: 1; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(255, 255, 255);" placeholder="Medicine Used For">
+                                    </td>
+                                    <td>
+                                        <input name="medicineprice" data-ng-model="medicine.price" type="text" class="typeahead form-control" style="border-color: transparent; box-shadow: none; opacity: 1; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(255, 255, 255);" placeholder="Medicine Price">
+                                    </td>
+                                    <td>
+                                        <input name="tablet" type="text" data-ng-model="medicine.tablets" class="typeahead form-control" style="border-color: transparent; box-shadow: none; opacity: 1; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(255, 255, 255);" placeholder="No of Tablets">
+                                    </td>
+                                    <td style="padding-bottom: 5px; margin-top: -5px; white-space: nowrap">
+                                        <button class="btn bgm-cyan command-add waves-effect waves-cicle" style="margin-left: 40px;"><i class="zmdi zmdi-plus"></i></button>
+                                    </td>
+                                </tr>
+                            </form>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</data>

@@ -1,0 +1,60 @@
+<data data-ui-view="">
+    <header id="header" class="clearfix" data-current-skin="blue">
+        <ul class="header-inner">
+            <li class="logo hidden-xs">
+                <a>MedCare Administration</a>
+            </li>
+            <li class="pull-right">
+                <button class="btn btn-danger waves-effect" data-ng-click="logout()">LOGOUT</button>
+            </li>
+        </ul>
+    </header>
+
+    <section id="main" data-layout="layout-1">
+        
+        <section id="content">
+            <div class="container">
+                <div class="block-header" style="margin-left: 455px;">
+                    <h2>Admin Panel</h2>
+                </div>
+
+                <div class="mini-charts">
+                    <div class="row" style="margin-left: 150px;">
+                        <div class="col-sm-6 col-md-3">
+                            <div class="mini-charts-item bgm-teal">
+                                <div class="clearfix">
+                                    <div class="count">
+                                        <small>Medicines</small>
+                                        <h2><a data-ui-sref="medicineAdmin">{{medicines.length}}</a></h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-md-3">
+                            <div class="mini-charts-item bgm-pink">
+                                <div class="clearfix">
+                                    <div class="count">
+                                        <small>Hospital Staff</small>
+                                        <h2><a data-ui-sref="staffAdmin">{{staff.length}}</a></h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-md-3" data-ng-click="getPatientList()">
+                            <div class="mini-charts-item bgm-cyan">
+                                <div class="clearfix">
+                                    <div class="count">
+                                        <small>Patient Details</small>
+                                        <h2><a data-ui-sref="patientAdmin">{{patients.length}}</a></h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+</data>

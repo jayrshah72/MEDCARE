@@ -1,0 +1,147 @@
+<style>
+.icon_td {
+	padding-left: 5% !important;
+    font-size: 16pt;
+    color: #1e1e1e;
+}
+
+.icon_td1 {
+	padding-left: 3% !important;
+    font-size: 16pt;
+    color: #1e1e1e;
+}
+.modal .modal-body {
+    margin: 50px 0px;
+}
+
+</style>
+<data ui-view>
+<header id="header" data-current-skin={{mactrl.currentSkin}} data-ng-include="'template/employeeHeader.html'" data-ng-controller="headerCtrl as hctrl"></header>
+
+   		<section id="content">
+      	 	<div class="container">
+         		<div class="block-header">
+         				
+         		</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="card">
+							<div class="card-header ch-alt text-center bgm-green">
+								<h2>Employee List</h2>
+							</div>
+					        <div class="card-body table-responsive">
+					            <table class="table">
+					                <thead>
+					                    <tr>
+					                        <th>ID</th>
+					                        <th>Name</th>
+					                        <th>Email</th>
+					                        <th>Contact</th>
+					                        <th>Edit Detail</th>
+					                        <th>Reset Progress</th>
+					                        <th>Delete Employee</th>
+					                    </tr>
+					                </thead>
+					                <tbody>
+					                    <tr ng-repeat= "employee in employeeList">
+					                        <td>{{employee.id}}</td>
+					                        <td>{{employee.name}}</td>
+					                        <td>{{employee.email}}</td>
+					                        <td>{{employee.contact}}</td>
+					                        <td class="icon_td1"><a href="" ng-click="open(employee,'lg')"><i class="zmdi zmdi-edit zmdi-hc-fw"></i></a></td>
+					                        <td class="icon_td"><a href="" ng-click="openResetModal(employee,'lg')"><i class="zmdi zmdi-refresh-alt zmdi-hc-fw"></i></a></td>
+					                        <td class="icon_td"><a href="" ng-click="deleteUser($event,employee,$index)"><i class="zmdi zmdi-delete zmdi-hc-fw"></i></a></td>
+					                    </tr>
+					                   
+					                </tbody>
+					            </table>
+					        </div>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<script type="text/ng-template" id="myModalContent.html">
+				<form ng-submit="updateEmployeeDetail($event)">
+                	<div class="modal-header">
+                    	<h4 class="modal-title" >Employee Detail</h4>
+                	</div>
+                	<div class="modal-body">
+					 	
+						<div class="row" style="margin-top:20px;">
+							<div class="col-sm-6">
+								<div class="form-group fg-float">
+                                	<div class="fg-line fg-toggled">
+                                    	<input type="text" class="input-lg form-control fg-input" ng-model="employee.name">
+                                    	<label class="fg-label">Enter Employee Name</label>
+                                	</div>
+                            	</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="form-group fg-float">
+	                                <div class="fg-line fg-toggled">
+	                                    <input type="email" class="input-lg form-control fg-input" ng-model="employee.email">
+	                                    <label class="fg-label">Enter Employee Email</label>
+	                                </div>
+	                            </div>
+							</div>
+						</div>
+						
+						<div class="row" style="margin-top:20px;">
+            				<div class="col-lg-6">
+     							<div class="form-group fg-float m-b-30">
+                					<div class="fg-line fg-toggled">
+                    					<input type="password" class="input-lg form-control fg-input" ng-model="employee.password">
+	                                    <label class="fg-label">Enter Employee Password</label>
+                					</div>
+            					</div>
+            				</div>
+            				<div class="col-lg-6">
+     							<div class="form-group fg-float m-b-30">
+                					<div class="fg-line fg-toggled">
+                    					<input type="number" class="input-lg form-control fg-input" ng-model="employee.contact">
+	                                    <label class="fg-label">Enter Contact Number</label>
+                					</div>
+            					</div>
+            				</div>
+     					</div>
+					
+                	</div>
+                	<div class="modal-footer" ng-hide="edit">
+                    	<button type="submit" class="btn btn-primary">Submit</button>
+                    	<button type="button" class="btn btn-link" ng-click="cancel()">Cancel</button>
+                	</div>
+				</form>
+            </script>
+            
+            
+            <script type="text/ng-template" id="modalForReset.html">
+				<form ng-submit="resetEmployeePreTest($event)">
+                	<div class="modal-header">
+                    	<h4 class="modal-title" >Please Select PreTest Which You want to Reset for {{employeeData.name}}</h4>
+                	</div>
+                	<div class="modal-body" ng-show="employeePreTestList.length!=0">
+					 	<div class="col-lg-6">
+							<div class="form-group">
+			                    <div class="fg-line">
+			                        <div class="select">
+			                            <select class="form-control" ng-model="resetPreTestId">
+			                                <option value="">Select PreTest</option>
+			                                <option ng-repeat="preTest in employeePreTestList" value="{{preTest.id}}" >{{preTest.name}}</option>		                                    
+			                            </select>
+			                        </div>
+			                    </div>
+			                </div>
+						</div>
+                	</div>
+					
+					<div class="modal-body" ng-show="!employeePreTestList.length!=0">
+						<p style="font-size: 12pt;">No PreTest has been Assigned to {{employeeData.name}} <span style="margin : 0px 10px"><strong>OR</strong></span> {{employeeData.name}} has Not Started Assigned PreTest Yet.</p>
+					</div>
+                	<div class="modal-footer" ng-hide="edit">
+                    	<button type="submit" class="btn btn-primary" ng-hide="!employeePreTestList.length!=0">Submit</button>
+                    	<button type="button" class="btn btn-link" ng-click="cancel()">Cancel</button>
+                	</div>
+				</form>
+            </script>
+</data>

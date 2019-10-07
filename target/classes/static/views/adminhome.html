@@ -1,0 +1,41 @@
+<style>
+.card-footer {
+	padding: 0px 0px 20px 20px;
+}
+.description_block {
+	height: 150px;
+}
+
+.description_text {
+	font-size:13px;
+}
+
+</style>
+<data ui-view>
+<header id="header" data-current-skin={{mactrl.currentSkin}} data-ng-include="'template/employeeHeader.html'" data-ng-controller="headerCtrl as hctrl"></header>
+
+   <section id="main" data-layout="layout-1">
+   		<aside id="sidebar" data-ng-include="'views/adminmenu.html'" data-ng-class="{ 'toggled': mactrl.sidebarToggle.left === true }"></aside>
+   		<section id="content">
+      	 	<div class="container">
+         		<div class="block-header">	
+         		</div>
+				<div class="row" style="padding:20px">
+					<div class="col-sm-6" ng-repeat="preTest in preTestList">
+						<div class="card">
+							<div class="card-header ch-alt">
+								<h2>{{preTest.name}}</h2>
+							</div>
+							<div class="card-body card-padding description_block">
+								<p class="description_text">{{preTest.description}}</p>
+							</div>
+							<div class="card-footer">
+								<a ui-sref="adminhome.preTestEmployeeList({'preTest':preTest})"><button class="btn bgm-blue waves-effect">Show Result</button></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</section>
+</data>

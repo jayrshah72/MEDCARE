@@ -1,0 +1,103 @@
+<data data-ui-view="">
+    <head>
+        <style>
+           .container-fluid {
+                height: 100%;
+                display: table;
+                width: 100%;
+                padding: 0;
+                padding-bottom: 100px;
+            }
+
+            .row-fluid {
+                height: 100%;
+                display: table-cell;
+                vertical-align: middle;
+            }
+
+
+            .centering {
+                float: none;
+                margin: 0 auto;
+            }
+
+            html,
+            body {
+                height: 100%;
+                margin: 0;
+                padding: 0
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row-fluid" style="padding-left: 420px;">
+                <div class="col-sm-12">
+                    <p align="center">
+                        <img src="img/medcare_logo.jpg" style="height: 120px; margin-top: 40px; margin-right: 400px;" />
+                        <!-- <img  src="img/medcare_logo.png" style="height:120px;margin-top:70px;"/> -->
+                    </p>
+                </div>
+
+                <!-- Register -->
+                <div ng-if="!switch" class="lc-block toggled" id="l-register">
+                    <form data-ng-submit="register($event)">
+                        <div class="input-group m-b-20">
+                            <span class="input-group-addon"><i class="zmdi zmdi-male"></i></span>
+                            <div class="fg-line">
+                                <input type="text" ng-model="patient.pname" class="form-control" placeholder="Name">
+                            </div>
+                        </div>
+
+                        <div class="input-group m-b-20">
+                            <span class="input-group-addon"><i class="zmdi zmdi-local-phone"></i></span>
+                            <div class="fg-line">
+                                <input type="text" ng-model="patient.pphno" class="form-control" placeholder="Contact Number">
+                            </div>
+                        </div>
+
+                        <div class="input-group m-b-20">
+                            <span class="input-group-addon"><i class="zmdi zmdi-email"></i></span>
+                            <div class="fg-line">
+                                <input type="text" ng-model="patient.pemail" class="form-control" placeholder="Email Address">
+                            </div>
+                        </div>
+
+                        <div class="input-group m-b-20">
+                            <span class="input-group-addon"><i class="zmdi zmdi-pin"></i></span>
+                            <div class="fg-line">
+                                <input type="text" ng-model="patient.paddress" class="form-control" placeholder="Address">
+                            </div>
+                        </div>
+
+                        <div class="input-group m-b-20">
+                            <span class="input-group-addon"><i class="zmdi zmdi-calendar"></i></span>
+                            <div class="dtp-container fg-line">
+                                <input type='text' ng-model="patient.pbday" class="form-control date-picker" placeholder="Birthday(YYYY-MM-DD)">
+                            </div>
+                        </div>
+
+                        <div class="gender" style="margin-top: 15px; margin-left: 25px;">
+                            <label class="radio radio-inline m-r-20">
+                                <input type="radio" name="gender" value="option1">
+                                <i class="input-helper"></i>
+                                Male
+                            </label>
+                            <label class="radio radio-inline m-r-20" style="margin-left: 25px;">
+                                <input type="radio" name="gender" value="option2">
+                                <i class="input-helper"></i>
+                                Female
+                            </label>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <button type="submit" class="btn btn-login btn-danger btn-float"><i class="zmdi zmdi-arrow-forward"></i></button>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </body>
+</data>

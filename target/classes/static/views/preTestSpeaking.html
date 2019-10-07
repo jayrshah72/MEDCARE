@@ -1,0 +1,20 @@
+<header id="header" data-current-skin={{mactrl.currentSkin}} data-ng-include="'template/employeeHeader.html'" data-ng-controller="headerCtrl as hctrl"></header>
+
+<section id="main">
+<div class="row">
+<div class="col-sm-6 col-sm-offset-3">
+<div class="card">
+			<div class="card-header bgm-green">
+                    <h2>{{preTest.name}}</h2>
+                    
+			</div>
+<div class="card-body card-padding" style="padding:10px">
+
+	
+		<p style="font-size:15px">{{preTest.instruction}}</p>
+		<a href="#" ui-sref="preTestStarted({'id':preTest.id})"><button class="btn bgm-green waves-effect btn-lg">Start</button></a>
+	</div>
+</div>
+</div>
+</div>
+</section>

@@ -1,0 +1,129 @@
+<data ui-view="">
+    <header id="header" class="clearfix" data-current-skin="blue">
+        <ul class="header-inner">
+            <li class="logo hidden-xs"><a>Patient Prescriptions</a></li>
+            <li class="pull-right">
+                <button class="btn btn-danger waves-effect" ng-click="logout()">Logout</button>
+            </li>
+        </ul>
+
+    </header>
+
+    <section id="main" data-layout="layout-1">
+        <section id="content">
+            <div class="container">
+                <div class="block-header" style="margin-left: 425px;">
+                    <h2>Patient's Name: {{patient.username}}</h2></br>
+                    <h2>Patient's Mobile Number: {{patient.phno}}</h2></br>
+                </div>
+
+                <div class="card" style="margin-left: 320px; width: 500px;">
+                    <div class="card-header">
+                        <h2>Prescription Details</h2>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Prescription Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="prescription in patientPrescriptions">
+                                    <td>{{prescription.id}}</td>
+                                    <td><a href="">{{prescription.date | date:"MM-dd-yyyy"}}</a></td>
+                                    <td style="padding-bottom: 5px; white-space: nowrap">
+                                        <button class="btn btn-icon command-edit waves-effect waves-circle"
+                                                ng-click = "open('lg', prescription.id,$index)">
+                                                    <i class="zmdi zmdi-edit"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <script type="text/ng-template" id="showPrescription.html">
+        <div class="modal-header">
+            <h2 class="modal-title">{{prescriptionList[0].pdmod.patientName}}</h2>
+            <div class="pull-right">
+                <button class="btn waves-effect" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+
+        <div class="card-body card-padding">
+            <!--<div role="tabpanel">
+                <ul class="tab-nav" role="tablist">
+                    <li ng-repeat="prescription in prescriptionList"
+                        role="presentation"
+                        ng-click="selectTab(prescription.id)"
+                        ng-class="{active:activeTab==prescription.id}">
+                        <a href="javascript:void(0);">{{prescription.date | date:'MM/dd/yyyy'}}</a>
+                    </li>
+                </ul>
+            </div>-->
+        </div>
+
+        <div class="modal-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <h3><b>Note:</b> {{note}}</h3>
+                        <b><h4>Prescribed Medicines</h4></b>
+                        </br>
+                    </tr>
+                    <tr>
+                        <td><b>Medicine Name</b></td>
+                        <td><b>Contents</b></td>
+                        <td><b>Description</b></td>
+                        <td><b>Used for</b></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="pres in prescriptions">
+                        <td>{{pres.medicine.name}}</td>
+                        <td>{{pres.medicine.contents}}</td>
+                        <td>{{pres.description}}</td>
+                        <td>{{pres.medicine.usedfor}}</td>
+                    </tr>
+                <tbody>
+            </table>
+            </br>
+            </br>
+            </br>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <b><h4>Alternate Generic Medicines</h4></b>
+                    </br>
+                </tr>
+                <tr>
+                    <td><b>Medicine Name</b></td>
+                    <td><b>Contents</b></td>
+                    <td><b>Used for</b></td>
+                    <td><b>Price</b></td>
+                    <td><b>Tablets</b></td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="genericPrescription in genericPrescriptionList">
+                    <td>{{genericPrescription.name}}</td>
+                    <td>{{genericPrescription.contents}}</td>
+                    <td>{{genericPrescription.usedfor}}</td>
+                    <td>{{genericPrescription.price}}</td>
+                    <td>{{genericPrescription.tablets}}</td>
+                </tr>
+                <tbody>
+            </table>
+        </div>
+
+        <div class="modal-footer">
+        </div>
+    </script>
+</data>

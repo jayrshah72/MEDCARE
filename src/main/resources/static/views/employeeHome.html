@@ -1,0 +1,26 @@
+<style>
+.card div:hover{
+cursor:hand;
+}
+</style>
+
+<header id="header" data-current-skin={{mactrl.currentSkin}} data-ng-include="'template/employeeHeader.html'" data-ng-controller="headerCtrl as hctrl"></header>
+ 
+<section id="main" data-layout="">
+	<div class="row" style="padding:20px">
+		<div class="col-sm-4" ng-repeat="preTest in preTestList">
+			<div class="card">
+				<div class="card-header ch-alt">
+					<h2>{{preTest.name}}</h2>
+				</div>
+				<div class="card-body card-padding">
+					    <p style="font-size:14px">{{preTest.description}}</p>
+						<button class="btn bgm-blue waves-effect" ng-click="check(preTest)" ng-disabled="preTest.startTime!=null">Know More</button>
+						<!-- <div class="pull-right">
+						<a ui-sref="resultList" ng-hide="preTest.startTime==null"><button class="btn bgm-blue waves-effect">Show Result</button></a>
+						</div> -->
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,19 @@
+<header id="header" data-current-skin={{mactrl.currentSkin}} data-ng-include="'template/employeeHeader.html'" data-ng-controller="headerCtrl as hctrl"></header>
+<data ui-view>
+<section id="main" data-layout="">
+	<div class="row" style="padding:20px">
+		<div class="col-sm-4">
+			<div class="card">
+				<div class="card-header ch-alt">
+					<h2>Speaking Test</h2>
+				</div>
+				<div class="card-body card-padding">
+					
+						<p style="font-size:14px">Description of Test</p>
+						<a ui-sref="employeeResult.resultList"><button class="btn bgm-blue waves-effect">Know Score</button></a>
+				</div>
+			</div>
+		</div>	
+	</div>
+</section>
+</data>

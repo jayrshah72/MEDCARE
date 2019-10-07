@@ -1,0 +1,1 @@
+var loginService = angular.module('employee-home-service', []);

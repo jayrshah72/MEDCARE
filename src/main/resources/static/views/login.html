@@ -1,0 +1,139 @@
+<style>
+
+.container-fluid{
+  height:100%;
+  display:table;
+  width: 100%;
+  padding: 0;
+  padding-bottom: 100px;
+}
+.row-fluid {height: 100%; display:table-cell; vertical-align: middle;}
+
+
+.centering {
+  float:none;
+  margin:0 auto;
+  }
+  html, body{height:100%; margin:0;padding:0}
+
+</style>
+
+ <div class="container-fluid">
+ 
+    <div class="row-fluid">
+    	 <div class="col-sm-12">
+		 <p align="center">
+		 <img  src="resources/images/medcare_logo.png" style="height:120px;margin-top:70px;"/>
+		 </p>
+		 </div>
+    	<div class="centering text-center">
+ 			<div ng-if="switch" class="lc-block toggled" id="l-login">
+ 	 			<form id = "loginForm" data-ng-submit = "login($event)">
+		            <div class="input-group m-b-20">
+		                <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
+		                <div class="fg-line">
+		                    <input type="text" class="form-control" placeholder="Username" ng-model = "user.phno" required>
+		                </div>
+		            </div>
+	            
+		            <div class="input-group m-b-20">
+		                <span class="input-group-addon"><i class="zmdi zmdi-male"></i></span>
+		                <div class="fg-line">
+		                    <input type="password" class="form-control" placeholder="Password" ng-model = "user.password">
+		                </div>
+		            </div>
+	            
+	            	<div class="clearfix"></div>
+	            
+		            <div class="checkbox">
+		                <label>
+		                    <input type="checkbox" value="">
+		                    <i class="input-helper"></i>
+		                    Keep me signed in
+		                </label>
+		            </div>
+	            
+	            	<button type="submit" class="btn btn-login btn-danger btn-float"><i class="zmdi zmdi-arrow-forward"></i></button>
+	            </form>
+	            <ul class="login-navigation">
+	                <li ng-click = "clickswitch($event)" data-block="#l-register" class="bgm-red">Register</li>
+	                <li data-block="#l-forget-password" class="bgm-orange">Forgot Password?</li>
+	            </ul>
+        	</div>
+        
+		    	<!-- Register -->
+		    <div ng-if="!switch" class="lc-block toggled" id="l-register">
+				<form data-ng-submit="register($event)">
+					<div class="input-group m-b-20">
+						<span class="input-group-addon"><i class="zmdi zmdi-male"></i></span>
+						<div class="fg-line">
+							<input type="text" ng-model="patient.pname" class="form-control" placeholder="Name">
+						</div>
+					</div>
+
+					<div class="input-group m-b-20">
+						<span class="input-group-addon"><i class="zmdi zmdi-local-phone"></i></span>
+						<div class="fg-line">
+							<input type="text" ng-model="patient.pphno" class="form-control" placeholder="Contact Number">
+						</div>
+					</div>
+
+					<div class="input-group m-b-20">
+						<span class="input-group-addon"><i class="zmdi zmdi-email"></i></span>
+						<div class="fg-line">
+							<input type="text" ng-model="patient.pemail" class="form-control" placeholder="Email Address">
+						</div>
+					</div>
+
+					<div class="input-group m-b-20">
+						<span class="input-group-addon"><i class="zmdi zmdi-pin"></i></span>
+						<div class="fg-line">
+							<input type="text" ng-model="patient.paddress" class="form-control" placeholder="Address">
+						</div>
+					</div>
+
+					<div class="input-group m-b-20">
+						<span class="input-group-addon"><i class="zmdi zmdi-calendar"></i></span>
+						<div class="dtp-container fg-line">
+							<input type='text' ng-model="patient.pbday" class="form-control date-picker" placeholder="Birthday(YYYY-MM-DD)">
+						</div>
+					</div>
+
+					<div class="input-group m-b-20">
+						<div class="toggle-switch" data-ts-color="red">
+							<label for="ts2" class="ts-label"> Female </label>
+							<input id="ts2" ng-model="patient.psex" type="checkbox" hidden="hidden">
+							<label for="ts2" class="ts-helper"></label>
+							<label for="ts2" class="ts-label"> Male </label>
+						</div>
+					</div>
+
+					<div class="clearfix"></div>
+
+					<button type="submit" class="btn btn-login btn-danger btn-float"><i class="zmdi zmdi-arrow-forward"></i></button>
+				</form>
+		            
+		        <ul class="login-navigation">
+		            <li ng-click="clickswitch($event)" data-block="#l-login" class="bgm-green">Login</li>
+		            <li data-block="#l-forget-password" class="bgm-orange">Forgot Password?</li>
+		        </ul>
+		    </div>
+		        
+		        <!-- Forgot Password -->
+		    <div class="lc-block" id="l-forget-password">
+		        <div class="input-group m-b-20">
+		             <span class="input-group-addon"><i class="zmdi zmdi-email"></i></span>
+		              <div class="fg-line">
+		                  <input type="text" class="form-control" placeholder="Email Address">
+		              </div>
+		        </div>
+		        <a href="" class="btn btn-login btn-danger btn-float"><i class="zmdi zmdi-arrow-forward"></i></a>
+		         <ul class="login-navigation">
+		             <li data-block="#l-login" class="bgm-green">Login</li>
+		             <li data-block="#l-register" class="bgm-red">Register</li>
+		         </ul>
+		    </div>
+       	</div>
+  	</div>
+ </div>
+<script src="resources/vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
